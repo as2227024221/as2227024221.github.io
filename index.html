@@ -6,6 +6,9 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -351,53 +354,19 @@
 
       
         
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Android Studio3.0新特性及安装详解</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Android Studio3.0新特性及安装详解</p>
 <p>简介:</p>
 <p>Android Studio是Android的官方IDE。它是专为Android而打造，可以加快您的开发速度，帮助您为每款Android设备构建最优应用。 它提供专为Android开发者量身定制的工具，其中包括丰富的代码编辑、调试、测试和性能分析工具。</p>
 <p>一.Android Studio3.0新特性</p>
 <p>(1).核心IDE更改 我们将基础IDE从IntelliJ 2016.2升级到2017.1.2，在2016.3和 2017.1中增加了许多新功能， 包括参数提示，语义突出显示，搜索中的即时结果等等。</p>
-<p>许多新的棉绒检查。</p>
-<p>即时运行调试 问题234401 现在应该解决。如果程序在断点上暂停，则应用程序重新启动。但是，如果应用程序没有在断点上暂停，则只有在方法实现更改时，才能重新启动并且热插拔应该工作。</p>
-<p>(2).Kotlin语言 Android Studio 3.0包括对Kotlin语言的支持。通过将Java文件转换为Kotlin(点击代码&gt;将Java文件转换为Kotlin文件)，或者使用新建项目向导创建一个新的启用Kotlin的项目，可以将Kotlin整合到项目中。</p>
-<p>(3).支持Java 8语言功能 Android Studio 3.0引入了对Java 8库和某些Java 8语言功能的内置支持。杰克不再需要，您应该首先禁用杰克使用默认工具链内置的改进的Java 8支持。</p>
-<p>(4).新的Android Profiler Android Studio 3.0中的新型Android Profiler提供了对应用程序活动的实时统一视图。Android Profiler窗口替换了“ Android监视器” 窗口。要打开Android Profiler，请按照下列步骤操作：单击视图&gt;工具Windows&gt; Android Profiler（您也可以在工具栏中单击 Android Profiler ）。从Android Profiler工具栏中选择要配置的设备和应用程序进程。如果您已通过USB连接设备但未看到它，请确保已 启用USB调试。单击NETWORK，CPU或MEMORY时间线，以打开每个分析器的更详细视图。 </p>
-<p>(5).即时应用支持 Android Studio 3.0允许您在项目中使用两种新的模块类型即时应用模块和功能模块来创建Instant Apps。 </p>
-<p>(6).APK调试器 Android Studio 3.0中的新版APK调试器可让您配置和调试APK，而无需将其从Android Studio项目中构建，只要它们是可调试的。</p>
-<p>(7).新设备文件资源管理器 新的设备文件资源管理器工具窗口允许您与连接的设备的文件系统无缝交互。 </p>
-<p>您可以点击查看Android Studio中的各种文件，并将文件复制到您的计算机，此功能取代了以前通过DDMS完成的设备文件系统交互 。</p>
-<p>(8).支持Android O开发者预览 一个新的自适应图标向导，允许您创建新的自适应启动器图标资源，并预览它们将如何在不同的设备上显示。要启动自适应图标向导，请右键单击/res项目中的 文件夹，然后单击新建&gt;图像资源&gt;启动器图标（自适应和旧版）。</p>
-<p>新的XML字体预览，字体选择工具以及对可下载字体的支持。</p>
-<p>(9).Android的新模板 Android Studio 3.0在“新建项目”和“新建模块”向导中包含一组新的模板，因此您可以开始使用Android Things开发物联网设备。</p>
-<p>(10).布局编辑器改进 更新的组件树，具有改进的拖放视图插入</p>
-<p>新错误面板</p>
-<p>查看障碍和组的新支持</p>
-<p>增强链创造</p>
-<p>(11).布局检查员改进 Android Studio 3.0中的布局检查器包括新的增强功能，可以更轻松地调试应用程序布局的问题，包括将属性分类为常见类别，并在“查看树”和“属性”面板中将新的搜索功能分组。要打开布局检查器，请单击工具&gt; Android&gt;布局检查器。</p>
-<p>(12).Google的Maven资源库 Android支持库Maven依赖关系现在可以在新的Maven存储库中的Android SDK Manager外部使用。结合命令行 sdkmanager 工具和Gradle，这种新的分发方法简化了使用连续集成系统的Maven依赖关系管理。要使用新的Maven存储库，请将URL添加到文件repositories块中build.gradle，如下所示：</p>
-<p>存储库{  maven {    url “<a href="https://maven.google.com”" target="_blank" rel="external">https://maven.google.com”</a> } }<br>(13).APK分析仪的改进 显示以前可用的包，类和方法之外的字段</p>
-<p>顶部显示和隐藏字段和方法的新过滤选项</p>
-<p>在树视图中，以斜体显示的节点是未在DEX文件中定义的引用</p>
-<p>对于启用Proguard构建的APK，您可以加载向DEX查看器添加功能的Proguard映射文件</p>
-<p>(14).用于Gradle的新Android插件 当使用这些项目的新插件时，您应该体验以下内容： 由于延迟的依赖性分辨率，更快的配置时间。</p>
-<p>变异感知依赖解决方案仅适用于您正在构建的项目和变体。</p>
-<p>对代码或资源应用简单的更改时，更快的增量构建时间。</p>
-<p>迁移到新插件说明地址: <a href="https://developer.android.google.cn/studio/build/gradle-plugin-3-0-0-migration.html" target="_blank" rel="external">https://developer.android.google.cn/studio/build/gradle-plugin-3-0-0-migration.html</a></p>
-<p>(15).使用CMake 3.7或更高版本 (16).新的Android模拟器功能 最后两个新特性可以直接去官网上查看，地址是： <a href="https://developer.android.google.cn/studio/preview/features/index.html#cmake" target="_blank" rel="external">https://developer.android.google.cn/studio/preview/features/index.html#cmake</a></p>
-<p>二.Android Studio3.0安装</p>
-<p>下载之前推荐使用谷歌浏览器，因为在下载地址很多介绍都是英文的，用谷歌浏览器可以一键翻译成简体。</p>
-<p>Android studio官网是: <a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="external">https://developer.android.google.cn/studio/index.html</a></p>
-<p>因为Android Studio3.0是预览版，所以点击预览</p>
-<p>点击后就可以下载了。</p>
-<p>安装注意事项: 首先分两种情况，第一种是你的电脑已安装Android Studio2.3版本；第二种是没有安装Android Studio2.3版本。</p>
-<p>(1).已安装稳定版:</p>
-<p>在安装时会弹出下面这个框： 默认的是选择第一个，要更改到第三个选项，如果装过2.3就必须注意sdk，因为2.3和3.0的编译版本更新是不一致的，会冲突。这是安装最要注意的地方！ 下载完一系列的资源后，在开启时也许回弹出下面这个框：</p>
-<p>直接点击Cancel就好了，不用设置代理端口。 这样基本上就顺利安装了。 附加：如果安装完成后打开以前的项目，有可能会出现下面这情况： </p>
-<p>这就需要我们下载gradle的最新版本，我们可以去gradle官网下载，官网地址： <a href="https://gradle.org/" target="_blank" rel="external">https://gradle.org/</a> 把下载好的zip包和解压包放在gradle相应版本的文件夹下。 gradle路径查看： 放完之后重启Android Studio3.0。</p>
-<p>(2).未安装稳定版: 未安装稳定版就直接默认选项安装就可以了！</p>
-<p>写的仓促，有错的地方见谅。</p>
-
-          
+<p>许多新的棉绒检查。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/14/Android Studio3.0新特性及安装详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -515,17 +484,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/14/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
